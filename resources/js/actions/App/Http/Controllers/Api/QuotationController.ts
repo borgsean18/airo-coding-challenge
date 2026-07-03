@@ -1,60 +1,60 @@
 import { queryParams, type RouteQueryOptions, type RouteDefinition, type RouteFormDefinition } from './../../../../../wayfinder'
 /**
-* @see \App\Http\Controllers\Api\QuotationController::calculate
-* @see app/Http/Controllers/Api/QuotationController.php:10
+* @see \App\Http\Controllers\Api\QuotationController::provide_quotation
+* @see app/Http/Controllers/Api/QuotationController.php:11
 * @route '/api/quotation'
 */
-export const calculate = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
-    url: calculate.url(options),
+export const provide_quotation = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+    url: provide_quotation.url(options),
     method: 'post',
 })
 
-calculate.definition = {
+provide_quotation.definition = {
     methods: ["post"],
     url: '/api/quotation',
 } satisfies RouteDefinition<["post"]>
 
 /**
-* @see \App\Http\Controllers\Api\QuotationController::calculate
-* @see app/Http/Controllers/Api/QuotationController.php:10
+* @see \App\Http\Controllers\Api\QuotationController::provide_quotation
+* @see app/Http/Controllers/Api/QuotationController.php:11
 * @route '/api/quotation'
 */
-calculate.url = (options?: RouteQueryOptions) => {
-    return calculate.definition.url + queryParams(options)
+provide_quotation.url = (options?: RouteQueryOptions) => {
+    return provide_quotation.definition.url + queryParams(options)
 }
 
 /**
-* @see \App\Http\Controllers\Api\QuotationController::calculate
-* @see app/Http/Controllers/Api/QuotationController.php:10
+* @see \App\Http\Controllers\Api\QuotationController::provide_quotation
+* @see app/Http/Controllers/Api/QuotationController.php:11
 * @route '/api/quotation'
 */
-calculate.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
-    url: calculate.url(options),
+provide_quotation.post = (options?: RouteQueryOptions): RouteDefinition<'post'> => ({
+    url: provide_quotation.url(options),
     method: 'post',
 })
 
 /**
-* @see \App\Http\Controllers\Api\QuotationController::calculate
-* @see app/Http/Controllers/Api/QuotationController.php:10
+* @see \App\Http\Controllers\Api\QuotationController::provide_quotation
+* @see app/Http/Controllers/Api/QuotationController.php:11
 * @route '/api/quotation'
 */
-const calculateForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-    action: calculate.url(options),
+const provide_quotationForm = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    action: provide_quotation.url(options),
     method: 'post',
 })
 
 /**
-* @see \App\Http\Controllers\Api\QuotationController::calculate
-* @see app/Http/Controllers/Api/QuotationController.php:10
+* @see \App\Http\Controllers\Api\QuotationController::provide_quotation
+* @see app/Http/Controllers/Api/QuotationController.php:11
 * @route '/api/quotation'
 */
-calculateForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
-    action: calculate.url(options),
+provide_quotationForm.post = (options?: RouteQueryOptions): RouteFormDefinition<'post'> => ({
+    action: provide_quotation.url(options),
     method: 'post',
 })
 
-calculate.form = calculateForm
+provide_quotation.form = provide_quotationForm
 
-const QuotationController = { calculate }
+const QuotationController = { provide_quotation }
 
 export default QuotationController

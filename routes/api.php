@@ -9,4 +9,4 @@ Route::get('/greeting', function () {
     ]);
 });
 
-Route::post('/quotation', [QuotationController::class, 'calculate']);
+Route::post('/quotation', [QuotationController::class, 'provide_quotation']);

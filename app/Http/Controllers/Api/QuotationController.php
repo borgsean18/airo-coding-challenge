@@ -3,12 +3,18 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Services\QuotationCalculator;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class QuotationController extends Controller
 {
-    public function provide_quotation(Request $request)
+    public function greeting()
+    {
+        return "Hello world";
+    }
+
+    public function provide_quotation(Request $request, QuotationCalculator $calculator)
     {
         $validated = $request->validate([
             'ages' => ['required', 'string'],
@@ -17,12 +23,13 @@ class QuotationController extends Controller
             'end_date' => ['required', 'date_format:Y-m-d', 'after:start_date'],
         ]);
 
-        $result = "Calculation Completed";
+        $total = $calculator->calculate_quotation($validated);
 
+        // JSON Response - Total, currency_id, quotation_id
         return response()->json([
-            'status' => 'success',
-            'data' => $result,
-            'validated_params' => $validated
+            'total' => $total,
+            'currency_id' => $validated["currency_id"],
+            'quotation_id' => 1
         ]);
     }
 }

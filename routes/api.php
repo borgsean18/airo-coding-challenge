@@ -3,10 +3,5 @@
 use App\Http\Controllers\Api\QuotationController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/greeting', function () {
-    return response()->json([
-        'message' => 'hello world'
-    ]);
-});
-
+Route::get('/quotation', [QuotationController::class, 'greeting']);
 Route::post('/quotation', [QuotationController::class, 'provide_quotation']);

@@ -19,7 +19,7 @@ class QuotationController extends Controller
         $allowed_currencies = ["EUR", "USD", "GBP"];
 
         $validated = $request->validate([
-            'ages' => ['required', 'string'],
+            'age' => ['required', 'string'],
             'currency_id' => ['required', 'string', Rule::in($allowed_currencies)],
             'start_date' => ['required', 'date_format:Y-m-d'],
             'end_date' => ['required', 'date_format:Y-m-d', 'after:start_date'],

@@ -16,7 +16,7 @@ class QuotationCalculator
 
     public function calculate_quotation(array $params): float
     {
-        $ages = explode(',', $params['ages']);
+        $ages = explode(',', $params['age']);
 
         $startDate = new \DateTime($params['start_date']);
         $endDate = new \DateTime($params['end_date']);

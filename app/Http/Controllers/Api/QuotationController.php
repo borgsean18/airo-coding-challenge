@@ -9,6 +9,8 @@ class QuotationController extends Controller
 {
     public function calculate(Request $request)
     {
-        return $request;
+        $data = $request->only(['age', 'currency_id', 'start_date', 'end_date']);
+
+        return response()->json($data);
     }
 }

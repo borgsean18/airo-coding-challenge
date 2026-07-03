@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\QuotationController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/greeting', function () {
@@ -7,3 +8,5 @@ Route::get('/greeting', function () {
         'message' => 'hello world'
     ]);
 });
+
+Route::apiResource('quotation', QuotationController::class);

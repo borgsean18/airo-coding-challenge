@@ -21,5 +21,11 @@ class DatabaseSeeder extends Seeder
             'name' => 'Test User',
             'email' => 'test@example.com',
         ]);
+
+        // Demo user so I dont have to create a registration system
+        User::factory()->create([
+            'name' => 'Demo User',
+            'email' => 'demo@example.com',
+        ]);
     }
 }

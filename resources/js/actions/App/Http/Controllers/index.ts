@@ -1,8 +1,10 @@
-import Api from './Api'
+import AuthController from './AuthController'
+import QuotationController from './QuotationController'
 import Settings from './Settings'
 
 const Controllers = {
-    Api: Object.assign(Api, Api),
+    AuthController: Object.assign(AuthController, AuthController),
+    QuotationController: Object.assign(QuotationController, QuotationController),
     Settings: Object.assign(Settings, Settings),
 }
 
